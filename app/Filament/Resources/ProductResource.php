@@ -92,6 +92,7 @@ class ProductResource extends Resource
                             ->required()
                             ->default(true),
                         Toggle::make('on_sale')
+                            ->label('On Rented')
                             ->onColor('success')
                             ->offColor('danger')
                             ->required(),
@@ -107,7 +108,7 @@ class ProductResource extends Resource
                 TextColumn::make('name')->searchable(),
                 TextColumn::make('category.name')->sortable(),
                 TextColumn::make('price')->money('IDR')->sortable(),
-                IconColumn::make('on_sale')->boolean(),
+                IconColumn::make('on_sale')->label('on rented')->boolean(),
                 IconColumn::make('in_stock')->boolean(),
                 IconColumn::make('is_active')->boolean(),
             ])
